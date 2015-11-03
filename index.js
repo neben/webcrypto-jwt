@@ -65,9 +65,7 @@
     var algorithms = {
       HS256: {
         name: 'HMAC',
-        hash: {
-          name: 'SHA-256'
-        }
+        hash: 'SHA-256'
       }
     };
 
@@ -95,7 +93,7 @@
       // TODO Test utf8ToUint8Array function
       var signatureAsUint8Array = utf8ToUint8Array(signaturePart);
       cryptoSubtle.sign(
-        importAlgorithm.name,
+        importAlgorithm,
         key,
         messageAsUint8Array
       ).then(function (res) {
@@ -129,9 +127,7 @@
     var algorithms = {
       HS256: {
         name: 'HMAC',
-        hash: {
-          name: 'SHA-256'
-        }
+        hash: 'SHA-256'
       }
     };
 
@@ -179,7 +175,7 @@
       var messageAsUint8Array = utf8ToUint8Array(partialToken);
 
       cryptoSubtle.sign(
-        importAlgorithm.name,
+        importAlgorithm,
         key,
         messageAsUint8Array
       ).then(function (signature) {
