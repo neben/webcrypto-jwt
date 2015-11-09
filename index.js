@@ -162,7 +162,7 @@
       ['sign']
     ).then(function (key) {
       var characters = payloadAsJSON.split('');
-      var it = utf8ToUint8Array(payloadAsJSON).entries();
+      var it = Array.from(utf8ToUint8Array(payloadAsJSON)).entries();
       var i = 0;
       var result = [];
 
